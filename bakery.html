@@ -97,7 +97,7 @@
     let WheatFloarCost = parseFloat(document.getElementById("WheatFlourCost").value) || 0;
 
     // حساب المرتب بعد الضريبة
-    let netHourlyWage = HourlyWage * (1 - WageTax / 100);
+    let netHourlyWage = HourlyWage + (HourlyWage* WageTax / 100);
 
     // تحويل المرتب للـ Gold
     let WageInGold = netHourlyWage / GoldRate;

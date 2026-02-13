@@ -16,7 +16,7 @@
 <nav class="navbar">
     <a href="https://myprofitland.com/game/Minanashaat" class="logo" target="_blank">MPL Hub</a>
     <div class="nav-links">
-        <a href="index.html">Home</a>
+        <a href="home.html">Home</a>
         <a href="#">Documentation</a>
         <a href="bakery.html">Tools</a>
         <a href="#">News</a>
@@ -30,54 +30,83 @@
 
 <div class="main">
 
-    <div class="card">
+   <div class="card">
 
-        <h1>Production Cost Calculator</h1>
-        <p class="subtitle">Calculate your real product cost in seconds</p>
+    <h1>Production Cost Calculator</h1>
+    <p class="subtitle">Calculate your real product cost in seconds</p>
+
+    <!-- PRODUCTS -->
+    <div class="products">
+        <label class="product">
+            <input type="checkbox">
+            <span>Bread</span>
+        </label>
+    </div>
+
+    <!-- INPUTS -->
+    <div class="inputs">
+        <input id="HourlyWage" type="number" placeholder="Hourly wage">
+        <input id="WageTax" type="number" placeholder="Wage Tax %">
+        <input id="WaterCost" type="number" placeholder="Water Cost">
+        <input id="ElectricityCost" type="number" placeholder="Electricity Cost">
+    </div>
+
+    <div class="inputs">
+        <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
+        <input id="LicenceForm" type="number" placeholder="License Form">
+        <input id="LocalGold" type="number" placeholder="local currency / Gold ">
+        <input id="EuroGold" type="number" placeholder="Euro / Gold ">
+    </div>
+
+    <div class="upgrade-section">
+    <h3>Company Upgrade Level</h3>
+    <div class="upgrade-options">
+        <label>
+            <input type="radio" name="upgrade" value="1">
+            <span>1</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="2">
+            <span>2</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="3">
+            <span>3</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="4">
+            <span>4</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="5">
+            <span>5</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="6">
+            <span>6</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="7">
+            <span>7</span>
+        </label>
+        <label>
+            <input type="radio" name="upgrade" value="8">
+            <span>8</span>
+        </label>
+    </div>
+</div>
 
 
-        <!-- PRODUCTS -->
-        <div class="products">
+    <button class="btn">Calculate Cost</button>
 
-            <label class="product">
-                <input type="checkbox">
-                <span>Bread</span>
-            </label>
-        </div>
-
-
-        <!-- INPUTS -->
-        <div class="inputs">
-
-            <input id="HourlyWage" type="number" placeholder="Hourly wage">
-            <input id="WageTax" type="number" placeholder="Wage Tax %">
-            <input id="WaterCost" type="number" placeholder="Water Cost">
-            <input id="ElectricityCost"type="number" placeholder="Electricity Cost">
-           
-
-        </div>
- <div class="inputs">
-             <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
-            <input id="LicenceForm" type="number" placeholder="License Form">
-            <input id="LocalGold" type="number" placeholder="local currency / Gold ">
-            <input id="EuroGold" type="number" placeholder=" Euro / Gold ">
-
-        </div>
-
-
-
-        <button class="btn">Calculate Cost</button>
-
-
-        <!-- RESULT -->
-        <div class="result">
-            <h3 style="color:gold; font-weight:bold;">Result</h3>
-            <p id="resultText">Your cost breakdown will appear here.</p>
-        </div>
-
+    <!-- RESULT -->
+    <div class="result">
+        <h3 style="color:gold; font-weight:bold;">Result</h3>
+        <p id="resultText">Your cost breakdown will appear here.</p>
     </div>
 
 </div>
+
 
 <footer>
  &copy;2026 <span style="color:gold; font-weight:bold;">MinaNashaat</span>. 
@@ -85,8 +114,7 @@
     </footer>
 
     <script>
-        document.querySelector(".btn").addEventListener("click", () => {
-    // جلب القيم من الـ input
+    document.querySelector(".btn").addEventListener("click", () => {
     let HourlyWage = parseFloat(document.getElementById("HourlyWage").value) || 0;
     let WageTax = parseFloat(document.getElementById("WageTax").value) || 0;
     let GoldRate = parseFloat(document.getElementById("LocalGold").value) || 1;
@@ -94,27 +122,35 @@
     let EuroLicence = parseFloat(document.getElementById("EuroGold").value) || 0;
     let WaterCost = parseFloat(document.getElementById("WaterCost").value) || 0;
     let ElectricityCost = parseFloat(document.getElementById("ElectricityCost").value) || 0;
-    let WheatFloarCost = parseFloat(document.getElementById("WheatFlourCost").value) || 0;
+    let WheatFlourCost = parseFloat(document.getElementById("WheatFlourCost").value) || 0;
 
-    // حساب المرتب بعد الضريبة
-    let netHourlyWage = HourlyWage + (HourlyWage* WageTax / 100);
+    let upgradeLevel = 0;
+    const selectedUpgrade = document.querySelector('input[name="upgrade"]:checked');
+    if(selectedUpgrade) upgradeLevel = parseInt(selectedUpgrade.value);
 
-    // تحويل المرتب للـ Gold
+    let productionMultiplier = 1 + (upgradeLevel * 0.10);
+    let producedQuantity = 1 * productionMultiplier; // 1 قطعة أصلية × الزيادة
+
+    let netHourlyWage = HourlyWage + (HourlyWage * WageTax / 100);
     let WageInGold = netHourlyWage / GoldRate;
+    let totalWage = WageInGold * 0.5 * 1; // 0.5 ساعة لكل قطعة أصلية
 
-    // نصيب الرخصة لكل منتج (600 منتج)
-    let LicenceGold = (licenceForm / 600) + (EuroLicence / 600);
+    let LicenceGoldPerProduct = (licenceForm / 600) + (EuroLicence / 600);
+    let totalLicence = LicenceGoldPerProduct * producedQuantity;
 
-    // حساب التكلفة الإجمالية لكل منتج
-    let results = (WageInGold * 0.5)     // نص ساعة عمل لكل منتج
-                  + (WheatFloarCost * 0.1) 
-                  + (WaterCost * 0.1) 
-                  + (ElectricityCost * 0.05) 
-                  + LicenceGold;
+    let totalWheat = WheatFlourCost * 0.1 * producedQuantity;
+    let totalWater = WaterCost * 0.1 * producedQuantity;
+    let totalElectricity = ElectricityCost * 0.05 * producedQuantity;
 
-    // عرض النتيجة
-    document.getElementById("resultText").textContent = `Your cost per product: ${results.toFixed(4)} Gold`;
+    let totalCost = totalWage + totalWheat + totalWater + totalElectricity + totalLicence;
+
+    let costPerProductAfterUpgrade = totalCost / producedQuantity;
+
+    document.getElementById("resultText").textContent = 
+    `Cost per product: ${costPerProductAfterUpgrade.toFixed(4)} Gold`;
 });
+
+
     </script>
 </body>
 </html>

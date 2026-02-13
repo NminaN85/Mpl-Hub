@@ -230,3 +230,31 @@ footer{
     color:#6B7280;
     margin-top:80px;
 }
+.upgrade-options {
+    margin: auto;
+    display: flex;
+    gap: 8px; /* المسافة بينهم */
+    flex-wrap: nowrap; 
+}
+
+.upgrade-options label {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #222;
+    color: gold;
+    padding: 6px 10px; /* أصغر شوية من قبل */
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+    font-size: 14px;
+}
+
+.upgrade-options input[type="radio"] {
+    margin-right: 4px;
+    
+}
+.upgrade-section h3{
+    text-align: center;
+    margin: 5px 1px;
+}

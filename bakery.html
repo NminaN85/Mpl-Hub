@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPL Hub</title>
+<link rel="stylesheet" href="stylelay.css">
+<style>
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+    <a href="https://myprofitland.com/game/Minanashaat" class="logo" target="_blank">MPL Hub</a>
+    <div class="nav-links">
+        <a href="home.html">Home</a>
+        <a href="#">Documentation</a>
+        <a href="bakery.html">Tools</a>
+        <a href="#">News</a>
+        <a href="#">About</a>
+        <a href="https://myprofitland.com/game/Minanashaat" target="_blank">Register in MPL</a>
+    </div>
+</nav>
+
+<!-- MAIN CONTENT -->
+   <!-- Hero Section -->
+
+<div class="main">
+
+    <div class="card">
+
+        <h1>Production Cost Calculator</h1>
+        <p class="subtitle">Calculate your real product cost in seconds</p>
+
+
+        <!-- PRODUCTS -->
+        <div class="products">
+
+            <label class="product">
+                <input type="checkbox">
+                <span>Bread</span>
+            </label>
+        </div>
+
+
+        <!-- INPUTS -->
+        <div class="inputs">
+
+            <input id="HourlyWage" type="number" placeholder="Hourly wage">
+            <input id="WageTax" type="number" placeholder="Wage Tax %">
+            <input id="WaterCost" type="number" placeholder="Water Cost">
+            <input id="ElectricityCost"type="number" placeholder="Electricity Cost">
+           
+
+        </div>
+ <div class="inputs">
+             <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
+            <input id="LicenceForm" type="number" placeholder="License Form">
+            <input id="LocalGold" type="number" placeholder="local currency / Gold ">
+            <input id="EuroGold" type="number" placeholder=" Euro / Gold ">
+
+        </div>
+
+
+
+        <button class="btn">Calculate Cost</button>
+
+
+        <!-- RESULT -->
+        <div class="result">
+            <h3 style="color:gold; font-weight:bold;">Result</h3>
+            <p id="resultText">Your cost breakdown will appear here.</p>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+ &copy;2026 <span style="color:gold; font-weight:bold;">MinaNashaat</span>. 
+        All Rights Reserved.
+    </footer>
+
+    <script>
+        document.querySelector(".btn").addEventListener("click", () => {
+    // جلب القيم من الـ input
+    let HourlyWage = parseFloat(document.getElementById("HourlyWage").value) || 0;
+    let WageTax = parseFloat(document.getElementById("WageTax").value) || 0;
+    let GoldRate = parseFloat(document.getElementById("LocalGold").value) || 1;
+    let licenceForm = parseFloat(document.getElementById("LicenceForm").value) || 0;
+    let EuroLicence = parseFloat(document.getElementById("EuroGold").value) || 0;
+    let WaterCost = parseFloat(document.getElementById("WaterCost").value) || 0;
+    let ElectricityCost = parseFloat(document.getElementById("ElectricityCost").value) || 0;
+    let WheatFloarCost = parseFloat(document.getElementById("WheatFlourCost").value) || 0;
+
+    // حساب المرتب بعد الضريبة
+    let netHourlyWage = HourlyWage * (1 - WageTax / 100);
+
+    // تحويل المرتب للـ Gold
+    let WageInGold = netHourlyWage / GoldRate;
+
+    // نصيب الرخصة لكل منتج (600 منتج)
+    let LicenceGold = (licenceForm / 600) + (EuroLicence / 600);
+
+    // حساب التكلفة الإجمالية لكل منتج
+    let results = (WageInGold * 0.5)     // نص ساعة عمل لكل منتج
+                  + (WheatFloarCost * 0.1) 
+                  + (WaterCost * 0.1) 
+                  + (ElectricityCost * 0.05) 
+                  + LicenceGold;
+
+    // عرض النتيجة
+    document.getElementById("resultText").textContent = `Your cost per product: ${results.toFixed(4)} Gold`;
+});
+    </script>
+</body>
+</html>

@@ -1,120 +1,172 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MPL Hub</title>
-<link rel="stylesheet" href="stylelay.css">
-<style>
-
-</style>
+<title>MPL Hub Calculator</title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+<div class="canvas">
 
-<!-- NAVBAR -->
-<nav class="navbar">
-    <a href="https://myprofitland.com/game/Minanashaat" class="logo" target="_blank">MPL Hub</a>
-    <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="#">Documentation</a>
-        <a href="companies.html">Tools</a>
-        <a href="#">News</a>
-        <a href="#">About</a>
-        <a href="https://myprofitland.com/game/Minanashaat" target="_blank">Register in MPL</a>
-    </div>
-</nav>
-
-<!-- MAIN CONTENT -->
-   <!-- Hero Section -->
-
-<div class="main">
-
-   <div class="card">
-
-    <h1>Production Cost Calculator</h1>
-    <p class="subtitle">Calculate your real product cost in seconds</p>
-
-    <!-- PRODUCTS -->
-    <div class="products">
-        <label class="product">
-            <input type="checkbox">
-            <span>Bread</span>
-        </label>
+    <!-- NAVBAR -->
+    <div class="navbar">
+        <a class="logo" href="https://myprofitland.com/game/Minanashaat" target="_blank">💰 MPL Hub 💰</a>
     </div>
 
-    <!-- INPUTS -->
-    <div class="inputs">
+    <!-- MAIN GRID -->
+    <div class="main">
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+            <div class="menu-item" onclick="window.location.href='index.html'">Dashboard</div>
+            <div class="menu-item" onclick="window.location.href='choosecompany.html'">Companies</div>
+            <div class="menu-item" onclick="window.location.href='news.html'">News</div>
+            <div class="menu-item" onclick="window.location.href='wars.html'">Wars</div>
+            <div class="menu-item" onclick="window.location.href='countries.html'">Countries</div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+            <div class="card">
+
+                 <div class="card wecome-card">
+    <h2><span>BAKERY</span> Cost Calculator</h2>
+    <p class="subtitle">
+        The Bakery can produce Bread. 
+        To produce Bread the company needs Wheat Flour produced by <a href="mill.html" class="gold-text">Mill</a>. 
+        Bread is used by <a href="restaurant.html" class="gold-text">Restaurant</a> to produce Meals.
+    </p>
+</div>
+
+<!-- PRODUCTS -->
+<div class="products">
+    <label class="product" for="breadCheck">
+        <input id="breadCheck" type="checkbox">
+        <span>Bread</span>
+    </label>
+</div>
+
+<!-- INPUTS -->
+<div class="inputs-grid">
+    <div class="input-group">
+        <label for="HourlyWage">Hourly Wage</label>
         <input id="HourlyWage" type="number" placeholder="Hourly wage">
+    </div>
+    <div class="input-group">
+        <label for="WageTax">Wage Tax %</label>
         <input id="WageTax" type="number" placeholder="Wage Tax %">
+    </div>
+    <div class="input-group">
+        <label for="WaterCost">Water Cost</label>
         <input id="WaterCost" type="number" placeholder="Water Cost">
+    </div>
+    <div class="input-group">
+        <label for="ElectricityCost">Electricity Cost</label>
         <input id="ElectricityCost" type="number" placeholder="Electricity Cost">
     </div>
-
-    <div class="inputs">
+    <div class="input-group">
+        <label for="WheatFlourCost">Wheat Flour Cost</label>
         <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
+    </div>
+    <div class="input-group">
+        <label for="LicenceForm">License Form</label>
         <input id="LicenceForm" type="number" placeholder="License Form">
+    </div>
+    <div class="input-group">
+        <label for="LocalGold">Local Currency / Gold</label>
         <input id="LocalGold" type="number" placeholder="local currency / Gold ">
+    </div>
+    <div class="input-group">
+        <label for="EuroGold">Euro / Gold</label>
         <input id="EuroGold" type="number" placeholder="Euro / Gold ">
     </div>
+</div>
 
-    <div class="upgrade-section">
+<!-- UPGRADE -->
+<div class="upgrade-section">
     <h3>Company Upgrade Level</h3>
     <div class="upgrade-options">
-        <label>
-            <input type="radio" name="upgrade" value="1">
-            <span>1</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="2">
-            <span>2</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="3">
-            <span>3</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="4">
-            <span>4</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="5">
-            <span>5</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="6">
-            <span>6</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="7">
-            <span>7</span>
-        </label>
-        <label>
-            <input type="radio" name="upgrade" value="8">
-            <span>8</span>
-        </label>
+        <label><input type="radio" name="upgrade" value="1"><span>1</span></label>
+        <label><input type="radio" name="upgrade" value="2"><span>2</span></label>
+        <label><input type="radio" name="upgrade" value="3"><span>3</span></label>
+        <label><input type="radio" name="upgrade" value="4"><span>4</span></label><br>
+        <label><input type="radio" name="upgrade" value="5"><span>5</span></label>
+        <label><input type="radio" name="upgrade" value="6"><span>6</span></label>
+        <label><input type="radio" name="upgrade" value="7"><span>7</span></label>
+        <label><input type="radio" name="upgrade" value="8"><span>8</span></label><br>
+    </div>
+</div>
+
+<!-- WEEKLY BOOST -->
+<div class="card">
+    <label style="display:flex; align-items:center; gap:10px;">
+        <input type="checkbox" id="weeklyBoostCheck">
+        <span class="gold-text">Activate Weekly Boost (20% Free Production)</span>
+    </label>
+
+    <div id="boostInputs" style="display:none; margin-top:15px;">
+        <div class="input-group">
+            <label for="BoostCost">Weekly Boost Cost (Gold)</label>
+            <input id="BoostCost" type="number" placeholder="Gold paid for boost">
+        </div>
+
+        <div class="input-group">
+            <label for="WeeklyProduction">Weekly Produced Quantity</label>
+            <input id="WeeklyProduction" type="number" placeholder="Total pieces produced this week">
+        </div>
     </div>
 </div>
 
 
-    <button class="btn">Calculate Cost</button>
+<div class="card center-button ">
+    <button class="button">Calculate Cost</button>
+</div>
 
-    <!-- RESULT -->
+<div class="card">
     <div class="result">
-        <h3 style="color:gold; font-weight:bold;">Result</h3>
+        <h3 class= "gold-text">Result</h3>
         <p id="resultText">Your cost breakdown will appear here.</p>
     </div>
-
 </div>
 
 
-<footer>
- &copy;2026 <span style="color:gold; font-weight:bold;">MinaNashaat</span>. 
-        All Rights Reserved.
-    </footer>
 
-    <script>
-    document.querySelector(".btn").addEventListener("click", () => {
+               
+            </div>
+        </div>
+
+        <!-- RIGHTBAR -->
+        <div class="rightbar">
+            <div class="card">
+                <h3>Important Articles</h3>
+                <ul>
+                    <li><a href="article1.html">About MPL</a></li><br><hr><br>
+                    <li><a href="article2.html">MPL Tips</a></li><br><hr><br>
+                    <li><a href="article3.html">MPL Guide</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <div class="footer">
+        <p>© 2026 <span class="gold-text">MinaNashaat</span>. All Rights Reserved.</p>
+    </div>
+
+</div>
+
+<script>
+// --- Show / Hide Weekly Boost Inputs ---
+document.getElementById("weeklyBoostCheck").addEventListener("change", function () {
+    document.getElementById("boostInputs").style.display =
+        this.checked ? "block" : "none";
+});
+
+// --- Calculate Cost ---
+document.querySelector(".button").addEventListener("click", () => {
+    // Inputs
     let HourlyWage = parseFloat(document.getElementById("HourlyWage").value) || 0;
     let WageTax = parseFloat(document.getElementById("WageTax").value) || 0;
     let GoldRate = parseFloat(document.getElementById("LocalGold").value) || 1;
@@ -129,11 +181,11 @@
     if(selectedUpgrade) upgradeLevel = parseInt(selectedUpgrade.value);
 
     let productionMultiplier = 1 + (upgradeLevel * 0.10);
-    let producedQuantity = 1 * productionMultiplier; // 1 قطعة أصلية × الزيادة
+    let producedQuantity = 1 * productionMultiplier; 
 
     let netHourlyWage = HourlyWage + (HourlyWage * WageTax / 100);
     let WageInGold = netHourlyWage / GoldRate;
-    let totalWage = WageInGold * 0.5 * 1; // 0.5 ساعة لكل قطعة أصلية
+    let totalWage = WageInGold * 0.5 * 1; 
 
     let LicenceGoldPerProduct = (licenceForm / 600) + (EuroLicence / 600);
     let totalLicence = LicenceGoldPerProduct * producedQuantity;
@@ -144,13 +196,37 @@
 
     let totalCost = totalWage + totalWheat + totalWater + totalElectricity + totalLicence;
 
-    let costPerProductAfterUpgrade = totalCost / producedQuantity;
+    let weeklyBoost = document.getElementById("weeklyBoostCheck").checked;
 
-    document.getElementById("resultText").textContent = 
-    `Cost per product: ${costPerProductAfterUpgrade.toFixed(4)} Gold`;
+    if (weeklyBoost) {
+        let boostCost = parseFloat(document.getElementById("BoostCost").value) || 0;
+        let weeklyProduction = parseFloat(document.getElementById("WeeklyProduction").value) || 0;
+
+        if (weeklyProduction <= 0) {
+            document.getElementById("resultText").textContent =
+                "Please enter weekly production quantity.";
+            return;
+        }
+
+        let effectiveQuantity = weeklyProduction * 0.8;
+
+        let costFor80Percent = totalCost * (effectiveQuantity / producedQuantity);
+
+        let totalWithBoost = costFor80Percent + boostCost;
+
+        let finalCostPerProduct = totalWithBoost / weeklyProduction;
+
+        document.getElementById("resultText").textContent =
+            `Cost per product with Weekly Boost: ${finalCostPerProduct.toFixed(4)} Gold`;
+
+    } else {
+        let costPerProductAfterUpgrade = totalCost / producedQuantity;
+        document.getElementById("resultText").textContent =
+            `Cost per product: ${costPerProductAfterUpgrade.toFixed(4)} Gold`;
+    }
 });
+</script>
 
-
-    </script>
+</script>
 </body>
 </html>

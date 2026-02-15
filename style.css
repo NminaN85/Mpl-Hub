@@ -41,7 +41,7 @@ body{
 
 @media (max-width: 768px) {
   .root {
-   width: calc(var(--base-width)*0.7px);
+   width: calc(var(--base-width)*0.5px);
 }
 
 

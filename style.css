@@ -20,7 +20,6 @@ body{
 }
 
 .canvas{
-    width:100vw;
     width: calc(var(--base-width)*1px);
     height: calc(var(--base-height)*1px);
 
@@ -38,6 +37,17 @@ body{
             calc(100vh/var(--base-height))
         )
     );
+}
+@media (max-width: 1024px) {
+    .canvas {
+        width: 95vw;
+    }
+}
+
+@media (max-width: 768px) {
+    .main {
+        grid-template-columns: 1fr;  /* كل حاجة تحت بعض على الموبايل */
+    }
 }
 
 

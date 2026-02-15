@@ -20,6 +20,7 @@ body{
 }
 
 .canvas{
+    width:100vw;
     width: calc(var(--base-width)*1px);
     height: calc(var(--base-height)*1px);
 

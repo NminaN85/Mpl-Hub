@@ -39,6 +39,11 @@ body{
     );
 }
 
+@media (max-width: 768px) {
+  .canvas {
+   width: 1000px;
+}
+
 
 .navbar{
     height: 80px;

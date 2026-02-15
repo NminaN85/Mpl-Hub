@@ -21,7 +21,7 @@ body{
 
 .canvas{
     width: calc(var(--base-width)*1px);
-    height: calc(var(--base-height)*1px);
+    min-height: calc(var(--base-height)*1px);
 
     background:#111827;
     border-radius: 14px;
@@ -194,6 +194,8 @@ transition: 0.25s;
     color: #e2e8f0;
 }
 
+
+
 .article-page .meta{
     color:#94a3b8;
     font-size: 0.9em;
@@ -321,4 +323,104 @@ transition: 0.25s;
     justify-content: center; 
     align-items: center;     
     height: 100px;           
+}
+
+/* companies page  */
+
+.categories-container {
+  max-width: 800px;
+  margin: 20px auto;
+  font-family: sans-serif;
+}
+
+.category {
+  margin-bottom: 10px;
+}
+
+.category h2 {
+  background: #444;
+  color: #fff;
+  padding: 12px 15px;
+  cursor: pointer;
+  border-radius: 5px;
+  user-select: none;
+}
+
+.company-item {
+  border: 1px solid #ccc;
+  margin: 5px 0;
+  border-radius: 5px;
+  overflow: hidden;
+  display: none; /* مغلق افتراضي */
+}
+
+.company-name {
+  padding: 10px 15px;
+  background: #eee;
+  cursor: pointer;
+  color: var(--gold);
+}
+
+.company-name:hover {
+  background: #ddd;
+}
+
+/* Popup Card - متوسط وكبير */
+.company-popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 400px;
+  max-width: 90%;
+  background: #222;
+  color: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  display: none;
+  z-index: 9999;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.7);
+  transform: translate(-50%, -50%);
+  animation: popupAppear 0.2s ease-in-out;
+}
+
+@keyframes popupAppear {
+  from { opacity: 0; transform: translate(-50%, -60%) scale(0.8); }
+  to { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+
+.company-popup img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  margin-right: 10px;
+  vertical-align: middle;
+}
+
+.popup-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.popup-header h3 {
+  margin: 0;
+}
+
+.popup-body p {
+  margin: 8px 0;
+}
+.popup-body p strong{
+    color: var(--gold);
+}
+
+#popupClose {
+  background: #ffcc00;
+  border: none;
+  padding: 7px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  margin-top: 12px;
+  color: #000;
+  font-weight: bold;
 }

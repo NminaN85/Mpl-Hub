@@ -421,13 +421,3 @@ transition: 0.25s;
   font-weight: bold;
 }
 
-@media (max-width: 768px) {
-  .canvas {
-    transform: scale(
-      min(
-        calc(100vw / var(--base-width)),
-        calc(100vh / var(--base-height))
-      )
-    ) scale(0.6);
-  }
-}

@@ -20,17 +20,15 @@ body{
 }
 
 .canvas{
-    width: calc(var(--base-width)*1px);
-    min-height: calc(var(--base-height)*1px); /* بدل height */
+    width: 90 vw;
+    max-width:1500px;
+    min-width:320px;
     background:#111827;
     border-radius: 14px;
     display: flex;
     flex-direction:column;
-
-    transform-origin: top center;
-    transform: scale(
-        calc(100vw / var(--base-width))
-    );
+    margin:20px auto;
+    padding:20px;
 }
 
 

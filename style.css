@@ -20,11 +20,8 @@ body{
 }
 
 .canvas{
-    width:95vw;
-    max-width: 1500px;
-    min-width: 320px;
-    /*width: calc(var(--base-width)*1px);*/
-  /*  height: calc(var(--base-height)*1px);*/
+    width: calc(var(--base-width)*1px);
+    height: calc(var(--base-height)*1px);
 
     background:#111827;
     border-radius: 14px;
@@ -41,14 +38,6 @@ body{
         )
     );
 }
-@media (max-width: 768) {
-    .canvas {
-        width: 95vw;
-    }
-}
-
-
-
 
 
 .navbar{
@@ -74,8 +63,7 @@ body{
 .main{
     flex: 1;
     display: grid;
-    grid-template-columns: 
-    minmax(200px, 1fr) 3fr minmax(200px, 1fr);
+    grid-template-columns: 260px 1fr 300px;
     gap: 18px;
     padding: 18px;
 }
@@ -85,7 +73,6 @@ body{
     border-radius: 10px;
     padding: 20px;
     color:#cbd5e1;
-    width:20%
 }
 .menu-item{
 padding: 12px;

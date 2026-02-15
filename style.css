@@ -5,7 +5,7 @@
 }
 
 body{
-    height: 100vh;
+    min-height: 100vh;
     display: grid;
     place-items: center;
     background: #0b0f19;
@@ -20,8 +20,11 @@ body{
 }
 
 .canvas{
-    width: calc(var(--base-width)*1px);
-    height: calc(var(--base-height)*1px);
+    width:95vw;
+    max-width: 1500px;
+    min-width: 320px;
+    /*width: calc(var(--base-width)*1px);*/
+  /*  height: calc(var(--base-height)*1px);*/
 
     background:#111827;
     border-radius: 14px;
@@ -38,17 +41,13 @@ body{
         )
     );
 }
-@media (max-width: 1024px) {
+@media (max-width: 768) {
     .canvas {
         width: 95vw;
     }
 }
 
-@media (max-width: 768px) {
-    .main {
-        grid-template-columns: 1fr;  /* كل حاجة تحت بعض على الموبايل */
-    }
-}
+
 
 
 

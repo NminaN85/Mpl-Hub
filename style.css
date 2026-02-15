@@ -40,8 +40,8 @@ body{
 }
 
 @media (max-width: 768px) {
-  .canvas {
-   width: 1000px;
+  .body {
+   width: calc(var(--base-width)*0.7px);
 }
 
 

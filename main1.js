@@ -18,6 +18,11 @@ const products = {
         workHours: 1.4,
         licenceUses: 100,
         ingredients: { water: 0.083, electricity: 0.2 }
+    },
+     cotton: {
+        workHours: 4,
+        licenceUses: 350,
+        ingredients: { water: 1.5, electricity: 0.3 }
     }
 };
 

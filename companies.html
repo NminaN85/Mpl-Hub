@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MPL Hub Guide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="canvas">
+      <!-- NAVBAR -->
+      <div class="navbar">
+        <a
+          class="logo"
+          href="https://myprofitland.com/game/Minanashaat"
+          target="_blank"
+        >
+          💰 MPL Hub 💰
+        </a>
+      </div>
+
+      <!-- MAIN GRID -->
+      <div class="main">
+        <!-- LEFT SIDEBAR -->
+        <div class="sidebar">
+          <div class="menu-item" onclick="window.location.href = 'index.html'">
+            Dashboard
+          </div>
+          <div
+            class="menu-item"
+            onclick="window.location.href = 'companies.html'"
+          >
+            Companies
+          </div>
+          <div
+            class="menu-item"
+            onclick="window.location.href = 'choosecompany.html'"
+          >
+            Products calculator
+          </div>
+          <div class="menu-item" onclick="window.location.href = 'news.html'">
+            News
+          </div>
+        </div>
+
+        <!-- CONTENT -->
+        <div class="content">
+          <div class="card wecome-card">
+            <h2>Select a Company</h2>
+            <p>Click on any company below to view details.</p>
+          </div>
+
+          <div class="card">
+            <div class="categories-container">
+              <!-- Gathering Companies -->
+              <div class="category">
+                <h2>Gathering Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">Coffee Plantation</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Wood Cutter</div>
+                </div>
+
+                <div class="company-item">
+                  <div class="company-name">Vineyard</div>
+                </div>
+
+                <div class="company-item">
+                  <div class="company-name">Cotton Plantation</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Cereal Farm</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Vegetable Farm</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Herbs Plantation</div>
+                </div>
+              </div>
+              </div>
+              <!-- Hand Working Companies -->
+              <div class="category">
+                <h2>Hand Working Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">Cow Farm</div>
+                </div>
+
+               
+              </div>
+
+              <!-- Guest Service Companies -->
+              <div class="category">
+                <h2>Guest Service Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">MilkAnd CoffeeShop</div>
+                </div>
+
+             
+              </div>
+
+              <!-- Engineering Companies -->
+              <div class="category">
+                <h2>Engineering Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">Attack Weapons Factory</div>
+                </div>
+
+                
+
+              <!-- Writing Companies -->
+              <div class="category">
+                <h2>Writing Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">Bank</div>
+                </div>
+              </div>
+
+              <!-- Extracting Companies -->
+              <div class="category">
+                <h2>Extracting Companies</h2>
+
+                <div class="company-item">
+                  <div class="company-name">Iron Mine</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Stone Quarry</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Coal Mine</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Oil Extraction</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Uranium Mine</div>
+                </div>
+                <div class="company-item">
+                  <div class="company-name">Sand Pit</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Popup Card -->
+            <div class="company-popup" id="companyPopup">
+              <div class="popup-header">
+                <img src="" alt="Company Logo" id="popupImage" />
+                <h3 id="popupName">Company Name</h3>
+              </div>
+              <div class="popup-body">
+                <p>
+                  <strong>Description:</strong> <span id="popupDesc"></span>
+                </p>
+                <p>
+                  <strong>Raw Materials:</strong>
+                  <span id="popupMaterials"></span>
+                </p>
+                <p>
+                  <strong>Products:</strong> <span id="popupProducts"></span>
+                </p>
+                <p>
+                  <strong>Skill Required:</strong> <span id="popupSkill"></span>
+                </p>
+              </div>
+              <button id="popupClose">Close</button>
+            </div>
+          </div>
+
+          <!-- RIGHTBAR -->
+          <div class="rightbar">
+            <div class="card">
+              <h3>Important Articles</h3>
+              <ul>
+                <li><a href="article1.html">About MPL</a></li>
+                <br />
+                <hr />
+                <br />
+                <li><a href="article2.html">MPL New Update</a></li>
+                <br />
+                <hr />
+                <br />
+                <li><a href="article3.html">MPL Guide</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER -->
+      <div class="footer">
+        <p>
+          © 2026 <span class="gold-text">MinaNashaat</span>. All Rights
+          Reserved.
+        </p>
+      </div>
+    </div>
+
+    <script src="companies.js"></script>
+  </body>
+</html>

@@ -39,17 +39,6 @@ body{
     );
 }
 
-@media (max-width: 768px) {
-  .canvas {
-    transform: scale(
-      min(
-        calc(100vw / var(--base-width)),
-        calc(100vh / var(--base-height))
-      )
-    ) scale(0.7);
-  }
-}
-
 
 .navbar{
     height: 80px;
@@ -113,7 +102,7 @@ transition: 0.25s;
     padding: 20px;
     color:#cbd5e1;
 }
-.wecome-card {
+.welcome-card {
     text-align: center;
 }
 .card{
@@ -435,4 +424,15 @@ transition: 0.25s;
   margin-top: 12px;
   color: #000;
   font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  .canvas {
+    transform: scale(
+      min(
+        calc(100vw / var(--base-width)),
+        calc(100vh / var(--base-height))
+      )
+    ) scale(0.7);
+  }
 }

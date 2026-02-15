@@ -22,22 +22,17 @@ body{
 .canvas{
     width: calc(var(--base-width)*1px);
     height: calc(var(--base-height)*1px);
-
     background:#111827;
     border-radius: 14px;
-    
     display: flex;
     flex-direction:column;
-
-    transform-origin: center;
+    transform-origin: top center;
 
     transform: scale(
-        min(
-            calc(100vw/var(--base-width)),
-            calc(100vh/var(--base-height))
-        )
+        calc(100vw/var(--base-width))
     );
 }
+
 
 
 .navbar{

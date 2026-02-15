@@ -19,10 +19,25 @@ const products = {
         licenceUses: 100,
         ingredients: { water: 0.083, electricity: 0.2 }
     },
-     cotton: {
+    cotton: {
         workHours: 4,
         licenceUses: 350,
         ingredients: { water: 1.5, electricity: 0.3 }
+    },
+     coffee: {
+        workHours: 0.4,
+        licenceUses: 2500,
+        ingredients: { coffeebeans: 0.04 , water: 0.07, electricity: 0.07 }
+    },
+     milkjug: {
+        workHours: 0.3,
+        licenceUses: 1800,
+        ingredients: { Porcessedmilk: 0.2 , water: 0.07, electricity: 0.07 }
+    },
+     mocaccino: {
+        workHours: 1,
+        licenceUses: 1000,
+        ingredients: {Chocco:0.5, Porcessedmilk: 0.1 ,coffeebeans: 0.04 , water: 0.07, electricity: 0.07 }
     }
 };
 
@@ -62,6 +77,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
+// =======================
+// نفس معادلتك 100%
+// =======================
 function calculateCostForPage() {
 
     const checkedProducts = Array.from(
@@ -78,6 +96,9 @@ function calculateCostForPage() {
     const WaterCost = parseFloat(document.getElementById("WaterCost")?.value) || 0;
     const ElectricityCost = parseFloat(document.getElementById("ElectricityCost")?.value) || 0;
     const WheatFlourCost = parseFloat(document.getElementById("WheatFlourCost")?.value) || 0;
+    const CoffeebeansCost = parseFloat(document.getElementById("CoffeebeansCost")?.value)||0;
+    const ProcessedmilkCost = parseFloat(document.getElementById("PorcessedmilkCost")?.value)||0;
+    const ChoccoCost = parseFloat(document.getElementById("ChoccoCost")?.value)||0;
 
     const LicenceForm = parseFloat(document.getElementById("LicenceForm")?.value) || 0;
     const LocalGold = parseFloat(document.getElementById("LocalGold")?.value) || 1;
@@ -107,12 +128,14 @@ function calculateCostForPage() {
 
         const producedQuantity = 1 * productionMultiplier;
 
+        // الأجر
         const netHourlyWage =
             product.workHours * HourlyWage * (1 + WageTax / 100);
 
         const totalWage =
             netHourlyWage / LocalGold;
 
+        // الرخصة
         const LicenceGoldPerProduct =
             (LicenceForm / product.licenceUses) +
             (EuroGold / product.licenceUses);
@@ -120,6 +143,9 @@ function calculateCostForPage() {
         const totalLicence =
             LicenceGoldPerProduct * producedQuantity;
 
+        // =======================
+        // الموارد ديناميك بنفس IDs
+        // =======================
         let totalIngredients = 0;
 
         if (product.ingredients.water) {
@@ -136,12 +162,27 @@ function calculateCostForPage() {
             totalIngredients +=
                 WheatFlourCost * product.ingredients.WheatFlour * producedQuantity;
         }
+        if (product.ingredients.coffeebeans) {
+            totalIngredients +=
+                CoffeebeansCost * product.ingredients.coffeebeans * producedQuantity;
+        }
+        if (product.ingredients.Chocco) {
+            totalIngredients +=
+                ChoccoCost * product.ingredients.Chocco * producedQuantity;
+        }
+        if (product.ingredients.Porcessedmilk) {
+            totalIngredients +=
+                ProcessedmilkCost * product.ingredients.Porcessedmilk * producedQuantity;
+        }
+       
+        
 
         let totalCost =
             totalWage +
             totalLicence +
             totalIngredients;
 
+        // Weekly Boost (نفس معادلتك)
         let finalCost;
 
         if (weeklyBoost) {

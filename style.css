@@ -42,6 +42,12 @@ body{
 @media (max-width: 768px) {
   .body {
    width: calc(var(--base-width)*0.5px);
+      transform: scale(
+        min(
+            calc(50vw/var(--base-width)),
+            calc(100vh/var(--base-height))
+        )
+    );
 }
 
 

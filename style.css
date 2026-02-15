@@ -433,6 +433,6 @@ transition: 0.25s;
         calc(100vw / var(--base-width)),
         calc(100vh / var(--base-height))
       )
-    ) scale(0.7);
+    ) scale(0.6);
   }
 }

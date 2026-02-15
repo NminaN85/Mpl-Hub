@@ -20,17 +20,31 @@ body{
 }
 
 .canvas{
-    width: 90 vw;
-    max-width:1500px;
-    min-width:320px;
+    width: calc(var(--base-width)*1px);
+    height: calc(var(--base-height)*1px);
+
     background:#111827;
     border-radius: 14px;
+    
     display: flex;
     flex-direction:column;
-    margin:20px auto;
+
+    transform-origin: center;
+
+    transform: scale(
+        min(
+            calc(100vw/var(--base-width)),
+            calc(100vh/var(--base-height))
+        )
+    );
 }
 
-
+@media (max-width: 768px) {
+  :root {
+    --base-width: 420;
+    --base-height: 900;
+  }
+}
 
 .navbar{
     height: 80px;

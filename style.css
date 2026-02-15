@@ -427,7 +427,7 @@ transition: 0.25s;
 }
 
 @media (max-width: 768px) {
-  .canvas {
+  body {
     transform: scale(
       min(
         calc(100vw / var(--base-width)),

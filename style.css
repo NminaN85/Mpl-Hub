@@ -21,7 +21,7 @@ body{
 
 .canvas{
     width: calc(var(--base-width)*1px);
-    min-height: calc(var(--base-height)*1px);
+    height: calc(var(--base-height)*1px);
 
     background:#111827;
     border-radius: 14px;

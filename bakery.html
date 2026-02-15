@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MPL Hub Calculator</title>
+<title>MPL Hub Calculator - Bakery</title>
 <link rel="stylesheet" href="style.css">
 </head>
 
@@ -20,120 +19,114 @@
     <div class="main">
         <!-- LEFT SIDEBAR -->
         <div class="sidebar">
-            <div class="menu-item" onclick="window.location.href='index.html'">Dashboard</div>
-            <div class="menu-item" onclick="window.location.href='choosecompany.html'">Companies</div>
-            <div class="menu-item" onclick="window.location.href='news.html'">News</div>
-            <div class="menu-item" onclick="window.location.href='wars.html'">Wars</div>
-            <div class="menu-item" onclick="window.location.href='countries.html'">Countries</div>
-        </div>
+                <div  class="menu-item" onclick="window.location.href='index.html'">Dashboard</div>
+                <div class="menu-item" onclick="window.location.href='companies.html'">Companies </div>
+                <div class="menu-item" onclick="window.location.href='choosecompany.html'">Products calculator </div>
+                <div class="menu-item" onclick="window.location.href='news.html'">News</div>
+            </div>
 
         <!-- CONTENT -->
         <div class="content">
             <div class="card">
+                <div class="card wecome-card">
+                    <h2><span>BAKERY</span> Cost Calculator</h2>
+                    <p class="subtitle">
+                        The Bakery can produce Bread. 
+                        To produce Bread the company needs Wheat Flour produced by <a href="mill.html" class="gold-text">Mill</a>. 
+                        Bread is used by <a href="restaurant.html" class="gold-text">Restaurant</a> to produce Meals.
+                    </p>
+                </div>
 
-                 <div class="card wecome-card">
-    <h2><span>BAKERY</span> Cost Calculator</h2>
-    <p class="subtitle">
-        The Bakery can produce Bread. 
-        To produce Bread the company needs Wheat Flour produced by <a href="mill.html" class="gold-text">Mill</a>. 
-        Bread is used by <a href="restaurant.html" class="gold-text">Restaurant</a> to produce Meals.
-    </p>
-</div>
+                <!-- PRODUCTS -->
+                <div class="products">
+                    <h3>Please Choose Product</h3>
+                    <label><input type="checkbox" class="productCheck" value="bread"><span>Bread</span></label>
+                </div>
 
-<!-- PRODUCTS -->
-<div class="products">
-    <label class="product" for="breadCheck">
-        <input id="breadCheck" type="checkbox">
-        <span>Bread</span>
-    </label>
-</div>
+                <!-- INPUTS -->
+                <div class="inputs-grid">
+                    <div class="input-group">
+                        <label for="HourlyWage">Hourly Wage</label>
+                        <input id="HourlyWage" type="number" placeholder="Hourly wage">
+                    </div>
+                    <div class="input-group">
+                        <label for="WageTax">Wage Tax %</label>
+                        <input id="WageTax" type="number" placeholder="Wage Tax %">
+                    </div>
+                    <div class="input-group">
+                        <label for="WaterCost">Water Cost</label>
+                        <input id="WaterCost" type="number" placeholder="Water Cost">
+                    </div>
+                    <div class="input-group">
+                        <label for="ElectricityCost">Electricity Cost</label>
+                        <input id="ElectricityCost" type="number" placeholder="Electricity Cost">
+                    </div>
+                    <div class="input-group">
+                        <label for="WheatFlourCost">Wheat Flour Cost</label>
+                        <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
+                    </div>
+                    <div class="input-group">
+                        <label for="LicenceForm">License Form</label>
+                        <input id="LicenceForm" type="number" placeholder="License Form">
+                    </div>
+                    <div class="input-group">
+                        <label for="LocalGold">Local Currency / Gold</label>
+                        <input id="LocalGold" type="number" placeholder="Local currency / Gold">
+                    </div>
+                    <div class="input-group">
+                        <label for="EuroGold">Euro / Gold</label>
+                        <input id="EuroGold" type="number" placeholder="Euro / Gold">
+                    </div>
+                </div>
 
-<!-- INPUTS -->
-<div class="inputs-grid">
-    <div class="input-group">
-        <label for="HourlyWage">Hourly Wage</label>
-        <input id="HourlyWage" type="number" placeholder="Hourly wage">
-    </div>
-    <div class="input-group">
-        <label for="WageTax">Wage Tax %</label>
-        <input id="WageTax" type="number" placeholder="Wage Tax %">
-    </div>
-    <div class="input-group">
-        <label for="WaterCost">Water Cost</label>
-        <input id="WaterCost" type="number" placeholder="Water Cost">
-    </div>
-    <div class="input-group">
-        <label for="ElectricityCost">Electricity Cost</label>
-        <input id="ElectricityCost" type="number" placeholder="Electricity Cost">
-    </div>
-    <div class="input-group">
-        <label for="WheatFlourCost">Wheat Flour Cost</label>
-        <input id="WheatFlourCost" type="number" placeholder="Wheat Flour Cost">
-    </div>
-    <div class="input-group">
-        <label for="LicenceForm">License Form</label>
-        <input id="LicenceForm" type="number" placeholder="License Form">
-    </div>
-    <div class="input-group">
-        <label for="LocalGold">Local Currency / Gold</label>
-        <input id="LocalGold" type="number" placeholder="local currency / Gold ">
-    </div>
-    <div class="input-group">
-        <label for="EuroGold">Euro / Gold</label>
-        <input id="EuroGold" type="number" placeholder="Euro / Gold ">
-    </div>
-</div>
+                <!-- UPGRADE -->
+                <div class="upgrade-section">
+                    <h3>Company Upgrade Level</h3>
+                    <div class="upgrade-options">
+                        <label><input type="radio" name="upgrade" value="1"><span>1</span></label>
+                        <label><input type="radio" name="upgrade" value="2"><span>2</span></label>
+                        <label><input type="radio" name="upgrade" value="3"><span>3</span></label>
+                        <label><input type="radio" name="upgrade" value="4"><span>4</span></label><br>
+                        <label><input type="radio" name="upgrade" value="5"><span>5</span></label>
+                        <label><input type="radio" name="upgrade" value="6"><span>6</span></label>
+                        <label><input type="radio" name="upgrade" value="7"><span>7</span></label>
+                        <label><input type="radio" name="upgrade" value="8"><span>8</span></label><br>
+                    </div>
+                </div>
 
-<!-- UPGRADE -->
-<div class="upgrade-section">
-    <h3>Company Upgrade Level</h3>
-    <div class="upgrade-options">
-        <label><input type="radio" name="upgrade" value="1"><span>1</span></label>
-        <label><input type="radio" name="upgrade" value="2"><span>2</span></label>
-        <label><input type="radio" name="upgrade" value="3"><span>3</span></label>
-        <label><input type="radio" name="upgrade" value="4"><span>4</span></label><br>
-        <label><input type="radio" name="upgrade" value="5"><span>5</span></label>
-        <label><input type="radio" name="upgrade" value="6"><span>6</span></label>
-        <label><input type="radio" name="upgrade" value="7"><span>7</span></label>
-        <label><input type="radio" name="upgrade" value="8"><span>8</span></label><br>
-    </div>
-</div>
+                <!-- WEEKLY BOOST -->
+                <div class="card">
+                    <label style="display:flex; align-items:center; gap:10px;">
+                        <input type="checkbox" id="weeklyBoostCheck">
+                        <span class="gold-text">Activate Weekly Boost (20% Free Production)</span>
+                    </label>
 
-<!-- WEEKLY BOOST -->
-<div class="card">
-    <label style="display:flex; align-items:center; gap:10px;">
-        <input type="checkbox" id="weeklyBoostCheck">
-        <span class="gold-text">Activate Weekly Boost (20% Free Production)</span>
-    </label>
+                    <div id="boostInputs" style="display:none; margin-top:15px;">
+                        <div class="input-group">
+                            <label for="BoostCost">Weekly Boost Cost (Gold)</label>
+                            <input id="BoostCost" type="number" placeholder="Gold paid for boost">
+                        </div>
 
-    <div id="boostInputs" style="display:none; margin-top:15px;">
-        <div class="input-group">
-            <label for="BoostCost">Weekly Boost Cost (Gold)</label>
-            <input id="BoostCost" type="number" placeholder="Gold paid for boost">
-        </div>
+                        <div class="input-group">
+                            <label for="WeeklyProduction">Weekly Produced Quantity</label>
+                            <input id="WeeklyProduction" type="number" placeholder="Total pieces produced this week">
+                        </div>
+                    </div>
+                </div>
 
-        <div class="input-group">
-            <label for="WeeklyProduction">Weekly Produced Quantity</label>
-            <input id="WeeklyProduction" type="number" placeholder="Total pieces produced this week">
-        </div>
-    </div>
-</div>
+                  <!-- CALCULATE BUTTON -->
+                <div class="card center-button">
+                    <button id="calcBtn" class="button">Calculate Cost</button>
+                </div>
 
+                <!-- RESULT -->
+                <div class="card">
+                    <div class="result">
+                        <h3 class="gold-text">Result</h3>
+                        <p id="resultText">Your cost breakdown will appear here.</p>
+                    </div>
+                </div>
 
-<div class="card center-button ">
-    <button class="button">Calculate Cost</button>
-</div>
-
-<div class="card">
-    <div class="result">
-        <h3 class= "gold-text">Result</h3>
-        <p id="resultText">Your cost breakdown will appear here.</p>
-    </div>
-</div>
-
-
-
-               
             </div>
         </div>
 
@@ -152,81 +145,14 @@
 
     <!-- FOOTER -->
     <div class="footer">
-        <p>© 2026 <span class="gold-text">MinaNashaat</span>. All Rights Reserved.</p>
+        <p>©️ 2026 <span class="gold-text">MinaNashaat</span>. All Rights Reserved.</p>
     </div>
 
 </div>
 
-<script>
-// --- Show / Hide Weekly Boost Inputs ---
-document.getElementById("weeklyBoostCheck").addEventListener("change", function () {
-    document.getElementById("boostInputs").style.display =
-        this.checked ? "block" : "none";
-});
+<!-- Main JS -->
 
-// --- Calculate Cost ---
-document.querySelector(".button").addEventListener("click", () => {
-    // Inputs
-    let HourlyWage = parseFloat(document.getElementById("HourlyWage").value) || 0;
-    let WageTax = parseFloat(document.getElementById("WageTax").value) || 0;
-    let GoldRate = parseFloat(document.getElementById("LocalGold").value) || 1;
-    let licenceForm = parseFloat(document.getElementById("LicenceForm").value) || 0;
-    let EuroLicence = parseFloat(document.getElementById("EuroGold").value) || 0;
-    let WaterCost = parseFloat(document.getElementById("WaterCost").value) || 0;
-    let ElectricityCost = parseFloat(document.getElementById("ElectricityCost").value) || 0;
-    let WheatFlourCost = parseFloat(document.getElementById("WheatFlourCost").value) || 0;
+<script src="main1.js"></script>
 
-    let upgradeLevel = 0;
-    const selectedUpgrade = document.querySelector('input[name="upgrade"]:checked');
-    if(selectedUpgrade) upgradeLevel = parseInt(selectedUpgrade.value);
-
-    let productionMultiplier = 1 + (upgradeLevel * 0.10);
-    let producedQuantity = 1 * productionMultiplier; 
-
-    let netHourlyWage = HourlyWage + (HourlyWage * WageTax / 100);
-    let WageInGold = netHourlyWage / GoldRate;
-    let totalWage = WageInGold * 0.5 * 1; 
-
-    let LicenceGoldPerProduct = (licenceForm / 600) + (EuroLicence / 600);
-    let totalLicence = LicenceGoldPerProduct * producedQuantity;
-
-    let totalWheat = WheatFlourCost * 0.1 * producedQuantity;
-    let totalWater = WaterCost * 0.1 * producedQuantity;
-    let totalElectricity = ElectricityCost * 0.05 * producedQuantity;
-
-    let totalCost = totalWage + totalWheat + totalWater + totalElectricity + totalLicence;
-
-    let weeklyBoost = document.getElementById("weeklyBoostCheck").checked;
-
-    if (weeklyBoost) {
-        let boostCost = parseFloat(document.getElementById("BoostCost").value) || 0;
-        let weeklyProduction = parseFloat(document.getElementById("WeeklyProduction").value) || 0;
-
-        if (weeklyProduction <= 0) {
-            document.getElementById("resultText").textContent =
-                "Please enter weekly production quantity.";
-            return;
-        }
-
-        let effectiveQuantity = weeklyProduction * 0.8;
-
-        let costFor80Percent = totalCost * (effectiveQuantity / producedQuantity);
-
-        let totalWithBoost = costFor80Percent + boostCost;
-
-        let finalCostPerProduct = totalWithBoost / weeklyProduction;
-
-        document.getElementById("resultText").textContent =
-            `Cost per product with Weekly Boost: ${finalCostPerProduct.toFixed(4)} Gold`;
-
-    } else {
-        let costPerProductAfterUpgrade = totalCost / producedQuantity;
-        document.getElementById("resultText").textContent =
-            `Cost per product: ${costPerProductAfterUpgrade.toFixed(4)} Gold`;
-    }
-});
-</script>
-
-</script>
 </body>
 </html>
